@@ -1,9 +1,11 @@
-node {
-  stage('Build') {
-    sh 'npm install' 
-  }
+node ('node:16-buster-slim'){
+  withEnv('-p 3000:3000' ){
+    stage('Build') {
+      sh 'npm install'
+    }
 
-  stage('Test') {
-    sh './jenkins/scripts/test.sh'
+    stage('Test') {
+      sh './jenkins/scripts/test.sh'
+    }
   }
 }
