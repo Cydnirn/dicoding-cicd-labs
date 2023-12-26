@@ -1,6 +1,6 @@
 node{
   stage("Checkout"){
-        git branch: 'react-app', url: "https://github.com/skill-Tzy/a428-cicd-labs/tree/react-app"
+        git branch: 'react-app', url: "https://github.com/skill-Tzy/a428-cicd-labs"
     }
   docker.image("node:16-buster-slim").inside("-p 3000:3000"){
     stage('Build') {
