@@ -1,6 +1,6 @@
 node{
   stage("Checkout"){
-        git branch: 'react-app', url: '/home/Programming/Dicoding/dicoding-cicd-labs'
+        git branch: 'react-app', url: 'https://github.com/Cydnirn/dicoding-cicd-labs'
     }
   withDockerContainer(args: '-p 3000:3000', image: 'node:16-buster-slim'){
     stage('Build') {
